@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Todo@localhost">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.15">
+    <root id="1">
+      <ServerVersion>11.2</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="Todo">
+      <ObjectId>33325</ObjectId>
+      <StateNumber>1025</StateNumber>
+      <Owner>romss</Owner>
+      <IntrospectionStateNumber>1045</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="bilemo">
+      <ObjectId>16524</ObjectId>
+      <StateNumber>649</StateNumber>
+      <Owner>romss</Owner>
+    </database>
+    <database id="4" parent="1" name="postgres">
+      <ObjectId>13364</ObjectId>
+      <Comment>default administrative connection database</Comment>
+      <StateNumber>566</StateNumber>
+      <Owner>romss</Owner>
+    </database>
+    <database id="5" parent="1" name="todo-list">
+      <ObjectId>33346</ObjectId>
+      <StateNumber>1037</StateNumber>
+      <Owner>romss</Owner>
+    </database>
+    <database id="6" parent="1" name="todolist">
+      <ObjectId>25202</ObjectId>
+      <StateNumber>1012</StateNumber>
+      <Owner>romss</Owner>
+    </database>
+    <role id="7" parent="1" name="pg_execute_server_program">
+      <ObjectId>4571</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="pg_read_server_files">
+      <ObjectId>4569</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="12" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="13" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="14" parent="1" name="pg_write_server_files">
+      <ObjectId>4570</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="15" parent="1" name="romss">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <Replication>1</Replication>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="16" parent="2" name="information_schema">
+      <ObjectId>13068</ObjectId>
+      <StateNumber>365</StateNumber>
+      <Owner>romss</Owner>
+    </schema>
+    <schema id="17" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+      <StateNumber>358</StateNumber>
+      <Owner>romss</Owner>
+    </schema>
+    <schema id="18" parent="2" name="pg_temp_1">
+      <ObjectId>11804</ObjectId>
+      <StateNumber>120</StateNumber>
+      <Owner>romss</Owner>
+    </schema>
+    <schema id="19" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+      <StateNumber>1</StateNumber>
+      <Owner>romss</Owner>
+    </schema>
+    <schema id="20" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11805</ObjectId>
+      <StateNumber>120</StateNumber>
+      <Owner>romss</Owner>
+    </schema>
+    <schema id="21" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <StateNumber>359</StateNumber>
+      <Owner>romss</Owner>
+      <IntrospectionStateNumber>1046</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="22" parent="2" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="23" parent="2" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="24" parent="2" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="25" parent="2" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="26" parent="2" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="27" parent="2" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <extension id="28" parent="2" name="plpgsql">
+      <ObjectId>13350</ObjectId>
+      <Comment>PL/pgSQL procedural language</Comment>
+      <StateNumber>518</StateNumber>
+      <Version>1.0</Version>
+      <SchemaName>pg_catalog</SchemaName>
+      <SchemaId>11</SchemaId>
+    </extension>
+    <sequence id="29" parent="21" name="task_id_seq">
+      <ObjectId>33326</ObjectId>
+      <StateNumber>1026</StateNumber>
+      <Owner>romss</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <table id="30" parent="21" name="task">
+      <ObjectId>33328</ObjectId>
+      <Owner>romss</Owner>
+      <StateNumber>1027</StateNumber>
+    </table>
+    <table id="31" parent="21" name="todolist_user">
+      <ObjectId>33336</ObjectId>
+      <Owner>romss</Owner>
+      <StateNumber>1028</StateNumber>
+    </table>
+    <column id="32" parent="30" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1027</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="33" parent="30" name="created_at">
+      <Position>2</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1027</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="34" parent="30" name="title">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1027</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="35" parent="30" name="content">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1027</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="36" parent="30" name="is_done">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1027</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="37" parent="30" name="task_pkey">
+      <ObjectId>33334</ObjectId>
+      <StateNumber>1027</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="38" parent="30" name="task_pkey">
+      <ObjectId>33335</ObjectId>
+      <StateNumber>1027</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>task_pkey</UnderlyingIndexName>
+    </key>
+    <column id="39" parent="31" name="id">
+      <Position>1</Position>
+      <Comment>(DC2Type:uuid)</Comment>
+      <DataType>uuid|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1028</StateNumber>
+      <TypeId>2950</TypeId>
+    </column>
+    <column id="40" parent="31" name="username">
+      <Position>2</Position>
+      <DataType>varchar(25)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1028</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="41" parent="31" name="password">
+      <Position>3</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1028</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="42" parent="31" name="roles">
+      <Position>4</Position>
+      <Comment>(DC2Type:array)</Comment>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1028</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="43" parent="31" name="email">
+      <Position>5</Position>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1028</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="44" parent="31" name="todolist_user_pkey">
+      <ObjectId>33342</ObjectId>
+      <StateNumber>1028</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <index id="45" parent="31" name="uniq_c14a04a0f85e0677">
+      <ObjectId>33344</ObjectId>
+      <StateNumber>1029</StateNumber>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="46" parent="31" name="uniq_c14a04a0e7927c74">
+      <ObjectId>33345</ObjectId>
+      <StateNumber>1030</StateNumber>
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="47" parent="31" name="todolist_user_pkey">
+      <ObjectId>33343</ObjectId>
+      <StateNumber>1028</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>todolist_user_pkey</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

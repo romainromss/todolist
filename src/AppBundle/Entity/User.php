@@ -1,90 +1,154 @@
 <?php
-
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Validator\Constraints as Assert;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\UuidInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Table("user")
- * @ORM\Entity
+ * @ORM\Table("todolist_user")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  * @UniqueEntity("email")
  */
 class User implements UserInterface
 {
     /**
-     * @ORM\Column(type="integer")
+     * @var UuidInterface
+     *
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="uuid")
      */
-    private $id;
+    protected $id;
 
     /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=25, unique=true)
-     * @Assert\NotBlank(message="Vous devez saisir un nom d'utilisateur.")
      */
     private $username;
-
     /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=64)
      */
     private $password;
-
     /**
+     * @var array
+     *
+     * @ORM\Column(type="array")
+     */
+    private $roles = [];
+    /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=60, unique=true)
-     * @Assert\NotBlank(message="Vous devez saisir une adresse email.")
-     * @Assert\Email(message="Le format de l'adresse n'est pas correcte.")
      */
     private $email;
+
+    /**
+     * User constructor.
+     *
+     * @param string $username
+     * @param string $password
+     * @param string $roles
+     * @param string $email
+     *
+     * @throws \Exception
+     */
+    public function __construct(
+        string $username,
+        string $password,
+        string $email,
+        string $roles
+    ) {
+        $this->id = Uuid::uuid4()->toString();
+        $this->username = $username;
+        $this->password = $password;
+        $this->roles[] = $roles;
+        $this->email = $email;
+    }
 
     public function getId()
     {
         return $this->id;
     }
-
-    public function getUsername()
+    /**
+     * @return string
+     */
+    public function getUsername(): string
     {
         return $this->username;
     }
-
-    public function setUsername($username)
+    /**
+     * @return string
+     */
+    public function getSalt(): string
     {
-        $this->username = $username;
+        return '';
     }
-
-    public function getSalt()
-    {
-        return null;
-    }
-
-    public function getPassword()
+    /**
+     * @return string
+     */
+    public function getPassword(): string
     {
         return $this->password;
     }
-
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
-
-    public function getEmail()
+    /**
+     * @return string
+     */
+    public function getEmail(): string
     {
         return $this->email;
     }
-
-    public function setEmail($email)
+    /**
+     * @return array
+     */
+    public function getRoles(): array
+    {
+        return $this->roles;
+    }
+    /**
+     * @param $password
+     *
+     * @return void
+     */
+    public function setPassword(string $password): void
+    {
+        $this->password = $password;
+    }
+    /**
+     * @param $username
+     *
+     * @return void
+     */
+    public function setUsername(string $username): void
+    {
+        $this->username = $username;
+    }
+    /**
+     * @param $email
+     *
+     * @return void
+     */
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
-
-    public function getRoles()
+    /**
+     * @param array $roles
+     *
+     * @return void
+     */
+    public function setRoles(array $roles): void
     {
-        return array('ROLE_USER');
+        $this->roles = $roles;
     }
-
-    public function eraseCredentials()
+    /**
+     * @return void
+     */
+    public function eraseCredentials(): void
     {
     }
 }
