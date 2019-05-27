@@ -2,153 +2,75 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Ramsey\Uuid\Uuid;
-use Ramsey\Uuid\UuidInterface;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Table("todolist_user")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ * @ORM\Table("user")
+ * @ORM\Entity
  * @UniqueEntity("email")
  */
 class User implements UserInterface
 {
     /**
-     * @var UuidInterface
-     *
+     * @ORM\Column(type="integer")
      * @ORM\Id
-     * @ORM\Column(type="uuid")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
-
+    private $id;
     /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=25, unique=true)
+     * @Assert\NotBlank(message="Vous devez saisir un nom d'utilisateur.")
      */
     private $username;
     /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=64)
      */
     private $password;
     /**
-     * @var array
-     *
-     * @ORM\Column(type="array")
-     */
-    private $roles = [];
-    /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=60, unique=true)
+     * @Assert\NotBlank(message="Vous devez saisir une adresse email.")
+     * @Assert\Email(message="Le format de l'adresse n'est pas correcte.")
      */
     private $email;
-
-    /**
-     * User constructor.
-     *
-     * @param string $username
-     * @param string $password
-     * @param string $roles
-     * @param string $email
-     *
-     * @throws \Exception
-     */
-    public function __construct(
-        string $username,
-        string $password,
-        string $email,
-        string $roles
-    ) {
-        $this->id = Uuid::uuid4()->toString();
-        $this->username = $username;
-        $this->password = $password;
-        $this->roles[] = $roles;
-        $this->email = $email;
-    }
-
     public function getId()
     {
         return $this->id;
     }
-    /**
-     * @return string
-     */
-    public function getUsername(): string
+    public function getUsername()
     {
         return $this->username;
     }
-    /**
-     * @return string
-     */
-    public function getSalt(): string
-    {
-        return '';
-    }
-    /**
-     * @return string
-     */
-    public function getPassword(): string
-    {
-        return $this->password;
-    }
-    /**
-     * @return string
-     */
-    public function getEmail(): string
-    {
-        return $this->email;
-    }
-    /**
-     * @return array
-     */
-    public function getRoles(): array
-    {
-        return $this->roles;
-    }
-    /**
-     * @param $password
-     *
-     * @return void
-     */
-    public function setPassword(string $password): void
-    {
-        $this->password = $password;
-    }
-    /**
-     * @param $username
-     *
-     * @return void
-     */
-    public function setUsername(string $username): void
+    public function setUsername($username)
     {
         $this->username = $username;
     }
-    /**
-     * @param $email
-     *
-     * @return void
-     */
-    public function setEmail(string $email): void
+    public function getSalt()
+    {
+        return null;
+    }
+    public function getPassword()
+    {
+        return $this->password;
+    }
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+    public function getEmail()
+    {
+        return $this->email;
+    }
+    public function setEmail($email)
     {
         $this->email = $email;
     }
-    /**
-     * @param array $roles
-     *
-     * @return void
-     */
-    public function setRoles(array $roles): void
+    public function getRoles()
     {
-        $this->roles = $roles;
+        return array('ROLE_USER');
     }
-    /**
-     * @return void
-     */
-    public function eraseCredentials(): void
+    public function eraseCredentials()
     {
     }
 }
