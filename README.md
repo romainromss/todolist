@@ -1,6 +1,3 @@
-TodoList
-========================
-
 To install
 --------------
 
@@ -8,7 +5,7 @@ To install
 - git clone https://git.romainbayette.com/romain/todolist.git
 - cd todolist
 
-## Composer
+## Composer
 - composer install
 
 
