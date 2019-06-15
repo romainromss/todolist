@@ -18,7 +18,7 @@ To install
 - php bin/console d:d:c
 - php bin/console d:s:u --force
 
-##Contributing
+## Contributing
 Read the <a href="https://git.romainbayette.com/romain/todolist/blob/development/contributing.md" title="link to doc">documentation contribution</a>
  
 
