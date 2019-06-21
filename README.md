@@ -19,7 +19,7 @@ To install
 - php bin/console d:s:u --force
 
 ## Contributing
-Read the <a href="https://gitu.romainbayette.com/romain/todolist/blob/development/contributing.md" title="link to doc">documentation contribution</a>
+Read the <a href="https://github.com/romainromss/todolist/blob/development/contributing.md" title="link to doc">documentation contribution</a>
  
 
 Enjoy :)
