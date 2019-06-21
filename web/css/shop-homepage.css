@@ -21,13 +21,13 @@ body {
     border-radius: 4px;
 }
 
-.caption {
-    height: 130px;
-    overflow: hidden;
+.btn {
+    margin: 10px;
 }
 
-.caption h4 {
-    white-space: nowrap;
+.delete-btn {
+    padding-left: 52px;
+    padding-right: 52px;
 }
 
 .thumbnail img {
@@ -49,6 +49,11 @@ body {
     color: #333;
 }
 
+.create {
+
+}
+
 footer {
     margin: 50px 0;
 }
+

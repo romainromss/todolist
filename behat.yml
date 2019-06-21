@@ -1,0 +1,37 @@
+default:
+    suites:
+        all:
+            paths: ['%paths.base%/features/']
+            contexts:
+                - FeatureContext
+                - DoctrineContext:
+                    entityManager: '@doctrine.orm.default_entity_manager'
+                    kernel: '@kernel'
+                    encoderFactory: '@security.encoder_factory'
+
+    extensions:
+        Behat\Symfony2Extension:
+            kernel:
+                class: AppKernel
+        Behat\MinkExtension:
+            sessions:
+                default:
+                    symfony2: ~
+        Behatch\Extension: ~
+        LeanPHP\Behat\CodeCoverage\Extension:
+            drivers:
+                - local
+            filter:
+                whitelist:
+                    include:
+                        directories:
+                            'src': ~
+                    exclude:
+                        directories:
+                            'src/AppBundle/Entity': ~
+                            'src/AppBundle/DataFixtures': ~
+                            'AppBundle\Domain\Subscribers': ~
+            report:
+                format:   html
+                options:
+                    target: var/behat-coverage

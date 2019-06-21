@@ -6,23 +6,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
- * @ORM\Table
+ * @ORM\Table("todolist_task")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TaskRepository")
  */
-class Task
+class Task extends AbstractEntity
 {
-    /**
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $createdAt;
-
     /**
      * @ORM\Column(type="string")
      * @Assert\NotBlank(message="Vous devez saisir un titre.")
@@ -40,25 +28,32 @@ class Task
      */
     private $isDone;
 
-    public function __construct()
-    {
-        $this->createdAt = new \Datetime();
+    /**
+     * @var User|null
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", cascade={"persist"})
+     */
+    private $user;
+
+    /**
+     * Task constructor.
+     *
+     * @param string $title
+     * @param string $content
+     * @param User|null $user
+     *
+     * @throws \Exception
+     */
+    public function __construct(
+        string $title,
+        string $content,
+        ?User $user = null
+    ) {
         $this->isDone = false;
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
+        $this->title = $title;
+        $this->content = $content;
+        $this->user = $user;
+        parent::__construct();
     }
 
     public function getTitle()
@@ -86,8 +81,16 @@ class Task
         return $this->isDone;
     }
 
-    public function toggle($flag)
+    public function toggle()
     {
-        $this->isDone = $flag;
+        $this->isDone = !$this->isDone;
+    }
+
+    /**
+     * @return User|null
+     */
+    public function getUser(): ?User
+    {
+        return $this->user;
     }
 }
