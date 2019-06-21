@@ -2,7 +2,7 @@ To install
 --------------
 
 ## Clone the project
-- git clone https://git.romainbayette.com/romain/todolist.git
+- git clone https://gitu.romainbayette.com/romain/todolist.git
 - cd todolist
 
 ## Composer
@@ -18,8 +18,8 @@ To install
 - php bin/console d:d:c
 - php bin/console d:s:u --force
 
-##Contributing
-Read the <a href="https://git.romainbayette.com/romain/todolist/blob/development/contributing.md" title="link to doc">documentation contribution</a>
+## Contributing
+Read the <a href="https://gitu.romainbayette.com/romain/todolist/blob/development/contributing.md" title="link to doc">documentation contribution</a>
  
 
 Enjoy :)
