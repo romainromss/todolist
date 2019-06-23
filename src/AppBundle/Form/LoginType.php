@@ -3,7 +3,6 @@
 
 namespace AppBundle\Form;
 
-
 use AppBundle\Domain\DTO\LoginDTO;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;

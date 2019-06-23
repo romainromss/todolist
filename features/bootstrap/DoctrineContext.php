@@ -198,7 +198,7 @@ class DoctrineContext implements Context
             'ROLE_USER'
         );
         $this->user2->setPassword(
-            $this->encoderFactory->getEncoder( $this->user2)->encodePassword(
+            $this->encoderFactory->getEncoder($this->user2)->encodePassword(
                 '12345678',
                 ''
             )
@@ -210,7 +210,7 @@ class DoctrineContext implements Context
             'ROLE_ADMIN'
         );
         $this->user7->setPassword(
-            $this->encoderFactory->getEncoder( $this->user7)->encodePassword(
+            $this->encoderFactory->getEncoder($this->user7)->encodePassword(
                 '12345678',
                 ''
             )
@@ -222,7 +222,7 @@ class DoctrineContext implements Context
             'ROLE_USER'
         );
         $this->user10->setPassword(
-            $this->encoderFactory->getEncoder( $this->user10)->encodePassword(
+            $this->encoderFactory->getEncoder($this->user10)->encodePassword(
                 '12345678',
                 ''
             )
@@ -254,7 +254,6 @@ class DoctrineContext implements Context
             );
         }
         $this->resetId($task, $taskId);
-
     }
 
     /**

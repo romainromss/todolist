@@ -3,7 +3,6 @@
 
 namespace AppBundle\Factory;
 
-
 use AppBundle\Entity\User;
 
 class UserFactory
@@ -21,7 +20,7 @@ class UserFactory
         string $username,
         string $password,
         string $email,
-         $roles
+        $roles
     ) {
         $user = new User(
             $username,

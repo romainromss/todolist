@@ -130,8 +130,11 @@ class UserController
             return new RedirectResponse($this->urlGenerator->generate('user_list'));
         }
 
-        return new Response($this->twig->render(
-            'user/create.html.twig', ['form' => $form->createView()])
+        return new Response(
+            $this->twig->render(
+                'user/create.html.twig',
+                ['form' => $form->createView()]
+            )
         );
     }
 
@@ -152,7 +155,6 @@ class UserController
         string $id,
         Request $request
     ):  Response {
-
         $user = $this->entityManager->getRepository(User::class)->getUserById($id);
         $encoder = $this->encoderFactory->getEncoder(User::class);
 
@@ -190,10 +192,12 @@ class UserController
 
         return new Response(
             $this->twig->render(
-                'user/edit.html.twig', [
-                'form' => $form->createView(),
-                'user' => $user
-            ])
+                'user/edit.html.twig',
+                [
+                    'form' => $form->createView(),
+                    'user' => $user
+                ]
+            )
         );
     }
 }

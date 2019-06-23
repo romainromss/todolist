@@ -153,7 +153,8 @@ class TaskController
         }
 
         $form = $this->formFactory->create(
-            TaskType::class, new TaskDTO(
+            TaskType::class,
+            new TaskDTO(
                 $task->getTitle(),
                 $task->getContent()
             )
@@ -173,10 +174,11 @@ class TaskController
             );
         }
 
-        return new Response($this->twig->render('task/edit.html.twig', [
-            'form' => $form->createView(),
-            'task' => $task
-        ])
+        return new Response(
+            $this->twig->render('task/edit.html.twig', [
+                'form' => $form->createView(),
+                'task' => $task
+            ])
         );
     }
 
@@ -213,7 +215,6 @@ class TaskController
         return new RedirectResponse(
             $this->urlGenerator->generate('task_list')
         );
-
     }
 
     /**
@@ -254,7 +255,8 @@ class TaskController
         $this->flashBag->add(
             'error',
             'Vous ne pouvez pas supprimer cette tâche.
-            ');
+            '
+        );
 
         return new RedirectResponse(
             $this->urlGenerator->generate('task_list')
