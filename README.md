@@ -2,7 +2,7 @@ To install
 --------------
 
 ## Clone the project
-- git clone https://gitu.romainbayette.com/romain/todolist.git
+- git clone https://github.com/romainromss/todolist
 - cd todolist
 
 ## Composer
