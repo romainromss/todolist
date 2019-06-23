@@ -30,7 +30,7 @@ default:
                         directories:
                             'src/AppBundle/Entity': ~
                             'src/AppBundle/DataFixtures': ~
-                            'AppBundle\Domain\Subscribers': ~
+                            'src/AppBundle/Domain/Subscribers': ~
             report:
                 format:   html
                 options:

@@ -3,9 +3,8 @@
 {% block body %}
 <h1>la page n'exsite pas</h1>
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        {{ path('task_list') }}
+        <button type="button" href="{{ path('task_list') }}">Liste des tâches</button>
         {% else %}
-         {{ path('login') }}
+            <button type="button" href="{{ path('login') }}">Connexion</button>
     {% endif %}
-
 {% endblock %}
